@@ -9,7 +9,7 @@ This was a school project in which I wrote my own version of the malloc and free
 
 See section titled **Code in mm.c :** for how the allocator implementation was improved from the starter code that was provided by the school instructor at the start of the project.
 
-
+<br/>
 
 **Folder and file structure in repository:** <br/>
 
@@ -26,6 +26,8 @@ The only file that is different across the 3 folders is mm.c . <br/>
 Each folder contains:<br/>
 1. Its own implementation of the malloc and free routines belonging to its parent folder, contained in the file mm.c . <br/>
 2. A driver program that allows the programmer to evaluate the performance of the implementation of the malloc and free routines contained in that folder. <br/>
+
+<br/>
 
 **Folders and files in each allocator implementation :** <br/>
 Folders
@@ -46,6 +48,8 @@ Files <br/>
 
 3. The 10+ remaining files in the same directory as mm.c are used by the driver program for configuration and to measure the speed of the malloc and free routines in mm.c .
     - I do not understand these remaining files well as these were not written by me. They were provided by the instructor of the course. To further understand these files, look at the README file in the same directory as mm.c.
+
+<br/>
 
 
 **Code in mm.c :** <br/>
@@ -70,6 +74,8 @@ Notes: <br/>
     - The mm_checkheap() method was not modified from what was initially provided by the instructor in the mm.c start code. Hence, in all 3 allocators it does not have a purpose. This method was an option provided by the course instructor to scan the heap and check it for consistency to help with debugging the code. 
     - I decided to only use The GNU Debugger (GDB) to detect bugs and to not write a heap checker. In hindsight, it may have helped to write a good heap checker in addition to using GDB.
 
+<br/>
+
 
 **How the driver program evaluates the mm.c code :** <br/>
 
@@ -90,9 +96,24 @@ The driver program summarizes the performance of the allocator by computing a pe
 
 <br/>
 
-2. Weighted harmonic mean of throughput - T: he harmonic mean is used to understand averages for rates. Throughput is a rate. The driver program uses weighted harmonic mean to emphasize some traces.
+2. Weighted harmonic mean of throughput - T: The harmonic mean is used to understand averages for rates. Throughput is a rate. The driver program uses weighted harmonic mean to emphasize some traces.
+
+
+
+<br/>
 
 **How to test the program :** <br/>
+
+git clone the project repository to a local folder of your choice. Once cloned, navigate to local folder that contains the root folder of the repository, and go into whichever allocator implementation you would like to test.
+
+The same tests should be run on all 3 allocator implementations. To ensure smooth testing of the 3 mm.c files, do not reorganise any of the files or folders.
+
+The following commands should only be run in the same directory where the mm.c file is found.
+
+To build the 
+
+
+
 
 If the malloc and free routines are incorrectly implemented and contain bugs, the driver program will crash and print a segmentation fault error message or get stuck in the process of running and never print the performance index.
 
