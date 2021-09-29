@@ -104,15 +104,44 @@ The driver program summarizes the performance of the allocator by computing a pe
 
 **How to test the program :** <br/>
 
-git clone the project repository to a local folder of your choice. Once cloned, navigate to local folder that contains the root folder of the repository, and go into whichever allocator implementation you would like to test.
+git clone the project repository to a local folder of your choice. Once cloned, navigate to local folder that contains the root folder of the repository, and go into whichever allocator implementation you would like to test.<br/>
 
-The same tests should be run on all 3 allocator implementations. To ensure smooth testing of the 3 mm.c files, do not reorganise any of the files or folders.
+The following commands should only be run in the same directory where the mm.c file is found:
 
-The following commands should only be run in the same directory where the mm.c file is found.
+1. Build the project (i.e. the driver program and mm.c)
 
-To build the 
+    - To build a fully optimized excutable file for the driver program, type "make" into the command line.
+
+    - Run the driver to test for correctness and print the performance index:
+
+        - To only test mm.c for correctness and print the performance index, type "./mdriver" into the command line.
+
+        - To do the above AND print a performance breakdown for each trace file, type "./mdriver -v" into the command line.
+
+        - To print a performance breakdown for each trace file and additional diagnostic information, type "./mdriver -V" into the command line.
+
+        - To run the driver for only one specific trace file in the traces folder, type the following command into the command line:
+```console
+            ./mdriver -f traces/<insert name of trace file here>
+```
 
 
+
+2. If you would like to change the mm.c code and do debugging using gdb
+
+    - Instead of following the above commands, build an optimized excutable file for the driver program. Type "make debug" into the command line
+
+
+    - Then start running the driver program with GDB using the command "gdb ./mdriver"
+
+
+    - Continue debugging based on your own knowledge of GDB commands. I cannot anticipate how this program will be used by other people.
+
+<br/>
+
+
+
+The above commands should remain the same regardless of which of the 3 allocator implementations you are testing. To ensure smooth testing of the 3 mm.c files, do not reorganise any of the files or folders.
 
 
 If the malloc and free routines are incorrectly implemented and contain bugs, the driver program will crash and print a segmentation fault error message or get stuck in the process of running and never print the performance index.
