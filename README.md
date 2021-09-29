@@ -111,21 +111,21 @@ The formula the driver program uses to calculate P the scaled utilization and we
 
 **How to test the program :** <br/>
 
-git clone the project repository to a local folder of your choice. Once cloned, navigate to local folder that contains the root folder of the repository, and go into whichever allocator implementation you would like to test.<br/>
+git clone the project repository to a local folder of your choice. Once cloned, navigate to the local folder that contains the root folder of the repository, and then navigate into the folder of whichever allocator implementation you would like to test.<br/>
 
-The following commands should only be run in the same directory where the mm.c file is found:
+From there you can 1) test the mm.c file using the driver program or 2) modify the mm.c code and try debugging using GDB. The following commands should only be run in the same directory where the mm.c file is found:
 
-1. Build the project (i.e. the driver program and mm.c)
+1. For testing the mm.c file using the driver program
 
-    - To build a fully optimized excutable file for the driver program, type "make" into the command line.
+    - First, to build a fully optimized excutable file for the driver program, type "make" into the command line.
 
-    - Run the driver to test for correctness and print the performance index:
+    - Next, run the driver to test for correctness and print the trace file statistics depending on which tracefile you want to focus on. The following are different options for running the driver program:
 
         - To only test mm.c for correctness and print the performance index, type "./mdriver" into the command line.
 
         - To do the above AND print a performance breakdown for each trace file, type "./mdriver -v" into the command line.
 
-        - To print a performance breakdown for each trace file and additional diagnostic information, type "./mdriver -V" into the command line.
+        - To print a performance breakdown for each trace file PLUS additional diagnostic information, type "./mdriver -V" into the command line.
 
         - To run the driver for only one specific trace file in the traces folder, type the following command into the command line:
 ```console
@@ -136,30 +136,16 @@ The following commands should only be run in the same directory where the mm.c f
 
 2. If you would like to change the mm.c code and do debugging using gdb
 
-    - Instead of following the above commands, build an optimized excutable file for the driver program. Type "make debug" into the command line
+    - Instead of following the above commands, build an optimized excutable file for the driver program by typing "make debug" into the command line.
 
 
-    - Then start running the driver program with GDB using the command "gdb ./mdriver"
+    - Then start running the driver program with GDB using the command "gdb ./mdriver" .
 
 
     - Continue debugging based on your own knowledge of GDB commands. I cannot anticipate how this program will be used by other people.
 
 <br/>
 
-
-
 The above commands should remain the same regardless of which of the 3 allocator implementations you are testing. To ensure smooth testing of the 3 mm.c files, do not reorganise any of the files or folders.
 
-
-If the malloc and free routines are incorrectly implemented and contain bugs, the driver program will crash and print a segmentation fault error message or get stuck in the process of running and never print the performance index.
-
-
-
-
-
-
-
-
-
-
-
+If the malloc and free routines of any of the 3 implementations of allocators are incorrectly implemented and contain bugs, when the driver program is run in the same directory where the mm.c file is found, the program will crash and print a segmentation fault error message or get stuck in the process of running and never print the performance index.
