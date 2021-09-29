@@ -105,7 +105,7 @@ The performance index is based on 2 factors:
 
 2. Weighted harmonic mean of throughput - T: The harmonic mean is used to understand averages for rates. Throughput is a rate. The driver program uses weighted harmonic mean to emphasize some traces.
 
-The formula the driver program uses to calculate P the scaled utilization and weighted harmonic mean of throughput is printed together with the performance index in the output of the driver program when it is run on all the trace files together.
+The formula the driver program uses to calculate P from the scaled utilization and weighted harmonic mean of throughput is printed together with the performance index in the output of the driver program when it is run on all the trace files together. Test the program to see this formula.
 
 <br/>
 
