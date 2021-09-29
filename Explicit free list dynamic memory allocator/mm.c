@@ -34,10 +34,6 @@
 
 /* Your info */
 team_t team = {
-    /* First and last name */
-    "Yan Hauw",
-    /* UID */
-    "905330350",
     /* Custom message (16 chars) */
     "EFL LIFO",
 };

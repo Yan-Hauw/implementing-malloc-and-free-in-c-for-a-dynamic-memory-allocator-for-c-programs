@@ -1,5 +1,5 @@
 /*
- * mm.c -  Simple allocator based on implicit free lists,
+ * mm.c -  For dynamic memory allocator based on an explicit free list,
  *         first fit placement, and boundary tag coalescing.
  *
  * Each block has header and footer of the form:
@@ -34,10 +34,6 @@
 
 /* Your info */
 team_t team = {
-    /* First and last name */
-    "implicit first fit",
-    /* UID */
-    "123456789",
     /* Custom message (16 chars) */
     "",
 };
