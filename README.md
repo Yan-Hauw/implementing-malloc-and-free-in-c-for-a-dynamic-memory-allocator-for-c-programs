@@ -7,7 +7,7 @@ Wrote the malloc and free routines of a dynamic memory allocator for C programs 
 
 This was a school project in which I wrote my own version of the malloc and free routines of a dynamic memory allocator for C programs.
 
-See section titled **Code in mm.c :** for how the allocator implementation was improved from the starter code that was provided by the school instructor at the start of the project.
+See section titled **Code in mm.c :** for explanation of how the allocator implementation was improved from the starter code that was provided by the school instructor at the start of the project.
 
 <br/>
 
@@ -33,11 +33,11 @@ Each folder contains:<br/>
 Folders
 1. traces (contains trace files (.rep files) and files to manipulate the trace files (.pl files and a Makefile)) <br/>
 
-I do not understand the files in the traces folder well as these were not written by me. These files were provided by the instructor of the course. 
-To further understand the trace files that are used by the driver program, look at the README file in the traces folder. <br/>
-<br/>
+    - I do not understand the files in the traces folder well as these were not written by me. These files were provided by the instructor of the course. To further understand the trace files that are used by the driver program, look at the README file in the traces folder. <br/>
 
-Note: The {realloc,realloc2}-bal.rep trace files were not used because the mm.c program was not evaluated for its realloc routines. These trace files were left there in case removing them would affect the functioning of the driver program. 
+    - Note: The {realloc,realloc2}-bal.rep trace files were not used because the mm.c program was not evaluated for its realloc routines. These trace files were left there in case removing them would affect the functioning of the driver program. 
+
+<br/>
 
 
 Files <br/>
@@ -56,7 +56,7 @@ Files <br/>
 
 The progression from implicit list to explicit list to segregated list allocator from project start to project end:
 
-  - At the start of the project, all files in the **Implicit list dynamic memory allocator** folder were provided by the instructor in the above described file/folder structure.
+  - At the start of the project, all files in the **Implicit list dynamic memory allocator** folder that is in the root of the repository were provided by the instructor.
 
   - The malloc and free routines of the implicit allocator were not written by me.
 
