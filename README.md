@@ -56,22 +56,21 @@ Files <br/>
 
 The progression from implicit list to explicit list to segregated list allocator from project start to project end:
 
-  - At the start of the project, all files in the **Implicit list dynamic memory allocator** folder that is in the root of the repository were provided by the instructor.
+  - At the start of the project, all files in the **Implicit list dynamic memory allocator** folder that is in the root of the repository were provided by the instructor. This is the implicit list allocator whose malloc and free routines were not written by me. This was the starting point of the project.
 
-  - The malloc and free routines of the implicit allocator were not written by me.
+  - The code in mm.c was then changed to improve the malloc and free routines to those of an explicit free list allocator. This improved code can be found in the mm.c file of the **Explicit free list dynamic memory allocator** folder that is in the root of the repository.
 
-  - The code in mm.c was then changed to improve the malloc and free routines to those of an **Explicit free list dynamic memory allocator**.
-
-  - After the malloc and free routines of the explicit free list allocator were implemented, the malloc and free routines in mm.c were further improved to those of a **Segregated list dynamic memory allocator**.
+  - Afterwards, the malloc and free routines in mm.c were further improved to those of a segregated free list allocator. This improved code can be found in the mm.c file of the **Segregated list dynamic memory allocator** folder that is in the root of the repository.
 
   - Throughout the project, the only file that was modified was mm.c . The reason that each folder in the GitHub repository has its own driver program is to allow people who are not familiar with the project to easily test the mm.c files for the different allocator implementations.
 
 
 Notes: <br/>
 1. The code is not well refactored. I aim to write more concise and readable code if I was to write more future projects in C.
-2. Since the mm.c program was not evaluated for its realloc routine, this routine was not modified from the naive mm_realloc function that was provided in the starter code. The starter code was left there in case removing it would affect the functioning of the driver program. 
-3. The heap consistency checker **mm_checkheap() method** in mm.c: 
-    - The mm_checkheap() method was not modified from what was initially provided by the instructor in the mm.c start code. Hence, in all 3 allocators it does not have a purpose. This method was an option provided by the course instructor to scan the heap and check it for consistency to help with debugging the code. 
+2. Since the mm.c program was not evaluated for its realloc routine, this routine was not modified from the naive mm_realloc function that was provided in the starter code (the implicit list allocator). The mm_realloc function code was left there in case removing it would affect the functioning of the driver program. 
+3. Remarks about the mm_checkheap() method in mm.c:
+    - This method was provided by the course instructor and there was an option to modify this method to make it scan the heap and check it for consistency to help with debugging the code.
+    - I did not modify the mm_checkheap() method from what was initially provided by the instructor in the mm.c start code. Hence, in all 3 allocators it does not have a purpose. 
     - I decided to only use The GNU Debugger (GDB) to detect bugs and to not write a heap checker. In hindsight, it may have helped to write a good heap checker in addition to using GDB.
 
 <br/>
