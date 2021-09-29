@@ -33,6 +33,8 @@ Each folder contains:<br/>
 Folders
 1. traces (contains trace files (.rep files) and files to manipulate the trace files (.pl files and a Makefile)) <br/>
 
+    - **The purpose of a trace file**: Roughly speaking, each trace file contains a set of instructions to be read by the driver program. When the driver program is called on a trace file, the driver program will follow the instructions to call the mm-malloc and mm-free routines in the mm.c file in some sequence as desired by the instructor of the course.
+
     - I do not understand the files in the traces folder well as these were not written by me. These files were provided by the instructor of the course. To further understand the trace files that are used by the driver program, look at the README file in the traces folder. <br/>
 
     - Note: The {realloc,realloc2}-bal.rep trace files were not used because the mm.c program was not evaluated for its realloc routines. These trace files were left there in case removing them would affect the functioning of the driver program. 
@@ -78,6 +80,8 @@ Notes: <br/>
 
 **How the driver program evaluates the mm.c code :** <br/>
 
+See section titled **Folder and file structure in repository** for an explanation of what the driver program does.
+
 The malloc and free routines in mm.c were evaluated by the driver program according to the following metrics:
 1. Correctness of malloc and free routines
     - To check whether the malloc and free routines are incorrectly implemented and contain bugs.
@@ -86,8 +90,12 @@ The malloc and free routines in mm.c were evaluated by the driver program accord
 3. Throughput
     - The average number of operations completed per second
 
-The driver program summarizes the performance of the allocator by computing a performance index, P, which is a score out of 100. The performance index is based on 2 factors:
-1. Scaled Utilization - U<sub>s</sub>: This is calculated by first calculating the weighted average of the utilizations (U<sub>avg</sub>) across traces. Some traces are worth more than others. The formula for scaling is: 
+    - Note: Correctness, space utilization, and throughput are computed individually for every trace file the mdriver is called to run on. See section titled **How to test the program** to get the driver to print the statistics for each trace file individually or to run the driver only on a single trace file, if you would like to test the program. See section titled **Folders and files in each allocator implementation** for an explanation of what is the purpose of a trace file.
+
+The driver program summarizes the performance of the allocator (the mm_malloc and mm_free methods in the mm.c file) by computing a performance index, P, which is a score out of 100. This performance index is printed by the driver program only when it is run on all the trace files together (this is the default setting). <br/>
+
+The performance index is based on 2 factors:
+1. Scaled Utilization - U<sub>s</sub>: This is calculated by first calculating the weighted average of the space utilization scores (U<sub>avg</sub>) of all traces. Some traces are worth more than others. The formula for scaling is: 
 
 <br/>
 
@@ -97,7 +105,7 @@ The driver program summarizes the performance of the allocator by computing a pe
 
 2. Weighted harmonic mean of throughput - T: The harmonic mean is used to understand averages for rates. Throughput is a rate. The driver program uses weighted harmonic mean to emphasize some traces.
 
-
+The formula the driver program uses to calculate P the scaled utilization and weighted harmonic mean of throughput is printed together with the performance index in the output of the driver program when it is run on all the trace files together.
 
 <br/>
 
