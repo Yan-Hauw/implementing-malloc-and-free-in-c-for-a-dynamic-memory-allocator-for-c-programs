@@ -1,5 +1,5 @@
 /*
- * mm.c -  Simple allocator based on implicit free lists,
+ * mm.c -  Simple allocator based on explicit free lists,
  *         first fit placement, and boundary tag coalescing.
  *
  * Each block has header and footer of the form:

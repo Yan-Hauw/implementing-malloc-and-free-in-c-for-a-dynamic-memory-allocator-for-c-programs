@@ -1,5 +1,5 @@
 /*
- * mm.c -  For dynamic memory allocator based on an explicit free list,
+ * mm.c -  For dynamic memory allocator based on an implicit free list,
  *         first fit placement, and boundary tag coalescing.
  *
  * Each block has header and footer of the form:
